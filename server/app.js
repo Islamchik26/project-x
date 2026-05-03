@@ -1,5 +1,10 @@
 const  express = require("express");
 const cors = require("cors");
+const pool = require("./config/db");
+
+pool.connect()
+  .then(() => console.log("PostgreSQL Connected"))
+  .catch(err => console.log(err));
 
 const app = express();
 
